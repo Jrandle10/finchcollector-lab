@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
   # localhost:8000
-    path('', views.home, name='home'),
+    path('', views.Home.as_view(), name='home'),
     # localhost:8000/about/
     path('about/', views.about, name='about'),
     # localhost:8000/finches/
@@ -20,4 +20,5 @@ urlpatterns = [
     path('toys/', views.ToyList.as_view(), name='toys_index'),
     path('toys/<int:pk>/update/', views.ToyUpdate.as_view(), name='toys_update'),
     path('toys/<int:pk>/delete/', views.ToyDelete.as_view(), name='toys_delete'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]
